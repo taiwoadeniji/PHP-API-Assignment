@@ -33,6 +33,7 @@
     <dd><?php echo $publicHoliday->launchYear; ?></dd>
       <dt>Type: </dt>
     <dd><?php echo $publicHoliday->type; ?></dd>
+    
     </dl>
 
     

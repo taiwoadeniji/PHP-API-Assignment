@@ -5,7 +5,7 @@
   // Convert the response to a PHP object.
   $publicHolidayObject = json_decode( $publicHolidayJSONString );
   // Collect the first data in the array.
-  $publicHoliday = $publicHolidayObject[0];
+  $publicHoliday = $publicHolidayObject;
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +19,7 @@
   <h2>Public Holidays API </h2>
     
     <dl>
+    <?php foreach ($publicHoliday as $publicHoliday): ?>
         <dt>Date: </dt>
      <dd><?php echo $publicHoliday->date; ?></dd>
         <dt>LocalName: </dt>
@@ -33,7 +34,8 @@
     <dd><?php echo $publicHoliday->launchYear; ?></dd>
       <dt>Type: </dt>
     <dd><?php echo $publicHoliday->type; ?></dd>
-    
+    <br></br>
+    <?php endforeach ?>
     </dl>
 
     
